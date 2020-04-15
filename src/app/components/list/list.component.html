@@ -1,0 +1,46 @@
+<div class="list-container row col-12">
+  <div class="list col-12">
+    <h4 class="list-title">Saved Providers</h4>
+    <div *ngIf="selectedProviders.length == 0">
+      <p>select some providers below to save</p>
+    </div>
+    <div class="card-deck">
+      <div *ngFor="let provider of selectedProviders" class="card">
+        <div class="card-img-top">
+          <i class="fas fa-user-md fa-6x"></i>
+        </div>
+        <div class="card-content row">
+          <div class="card-info col-8">
+            <b class="card-text">{{provider.name}}</b>
+            <p class="card-text">{{provider.address}}</p>
+          </div>
+          <div class="card-select col-4">
+            <i class="fas fa-check fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list col-12">
+    <h4 class="list-title">Other Providers</h4>
+    <div *ngIf="unselectedProviders.length == 0">
+      <p>we currently have no other providers to recommend</p>
+    </div>
+    <div class="card-deck">
+      <div *ngFor="let provider of unselectedProviders" class="card">
+        <div class="card-img-top">
+          <i class="fas fa-user-md fa-6x"></i>
+        </div>
+        <div class="card-content row">
+          <div class="card-info col-8">
+            <b class="card-text">{{provider.name}}</b>
+            <p class="card-text">{{provider.address}}</p>
+          </div>
+          <div class="card-select col-4">
+            <i class="fas fa-check fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap');
+
+/* set up global text styling */
+p, pre, div, span, body{
+  font-family: 'Nunito', sans-serif !important;
+}
+b, h1, h2, h3, h4, h5, h6{
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 900;
+}
+
+/* ignore some bootstrap pre-sets */
+*.row{
+  margin: 0rem;
+  padding: 0rem;
+}
+*.container-fluid{
+  padding: 0rem;
+}
