@@ -1,7 +1,7 @@
 # provider-list-exercise
 Simple app allowing the user to manage data between two lists on a ui with data persisted between sessions.
 
-[![Build Status](https://travis-ci.com/DaemonWill/provider-list-exercise.svg?branch=master)](https://travis-ci.com/DaemonWill/provider-list-exercise)
+[![Build Status](https://travis-ci.com/DaemonWill/platform-ui-code-test.svg?branch=master)](https://travis-ci.com/DaemonWill/platform-ui-code-test)
 
 Travis builds: https://travis-ci.com/DaemonWill/platform-ui-code-test
 
