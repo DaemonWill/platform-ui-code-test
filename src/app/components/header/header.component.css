@@ -1,0 +1,14 @@
+div.header{
+  padding: 1rem;
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  z-index: 100;
+  color: white;
+  background-color: cadetblue;
+  border-bottom: 0.1rem solid lightgrey;
+}
+h3.header{
+  margin: 0rem;
+  display: inline-block;
+}

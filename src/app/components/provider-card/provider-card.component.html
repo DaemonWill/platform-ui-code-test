@@ -1,0 +1,16 @@
+<div *ngIf="providerList.length != 0 && listName">
+  <div *ngFor="let provider of providerList; let index = index" class="card d-inline-block">
+    <div class="card-img-top">
+      <i class="fas fa-user-md fa-6x"></i>
+    </div>
+    <div class="card-content row">
+      <div class="card-info col-8">
+        <b class="card-text">{{provider.name}}</b>
+        <p class="card-text">{{provider.address}}</p>
+      </div>
+      <div class="card-select col-4" (click)="handleCardInteraction(index)" *ngIf="listName">
+        <i class="fas fa-2x {{(listName == 'selected') ? 'fa-times' : 'fa-check'}}"></i>
+      </div>
+    </div>
+  </div>
+</div>

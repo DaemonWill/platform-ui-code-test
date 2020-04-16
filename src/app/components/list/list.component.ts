@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-list',
@@ -6,31 +7,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  constructor(private storageService : StorageService) {}
 
-  public selectedProviders = [];
-  public unselectedProviders = [
-    {
-      id: '1',
-      name: 'John',
-      address: '123 Greenway Blvd',
-      phone: '8991234321'
-    },
-    {
-      id: '2',
-      name: 'Mary',
-      address: '443 Windwhisper Road',
-      phone: '2233211903'
-    },
-    {
-      id: '3',
-      name: 'Jason',
-      address: '9992 Pumpkin Hollow',
-      phone: '4343219384'
-    }
-  ];
+  ngOnInit() {
+    //fetch data from session storage if applicable
+    this.selectedProviders = this.storageService.getSelectedProviders();
+    this.unselectedProviders = this.storageService.getUnselectedProviders();
+  }
 
-  constructor() {}
+  selectedProviders : any[] = [];
+  unselectedProviders : any[] = [];
 
-  ngOnInit() {}
+  //given the index of an unselected provider, add it to selected and remove it from unselected
+  selectProvider(index : number) : void {
+    this.selectedProviders.push(this.unselectedProviders[index]);
+    this.unselectedProviders.splice(index, 1);
+    this.updateStorage();
+  }
 
+  //given the index of a selected provider, add it to unselected and remove it from selected
+  unselectProvider(index : number) : void {
+    this.unselectedProviders.push(this.selectedProviders[index]);
+    this.selectedProviders.splice(index, 1);
+    this.updateStorage();
+  }
+
+  //update session storage with the current choices made by the user
+  updateStorage() : void {
+    this.storageService.setSelectedProviders(this.selectedProviders);
+    this.storageService.setUnselectedProviders(this.unselectedProviders);
+  }
 }

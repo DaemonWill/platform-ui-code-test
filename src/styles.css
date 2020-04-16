@@ -19,3 +19,7 @@ b, h1, h2, h3, h4, h5, h6{
 *.container-fluid{
   padding: 0rem;
 }
+
+body{
+  background-color: #f2f2f2f2;
+}
