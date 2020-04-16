@@ -1,25 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { ProviderCardComponent } from './provider-card.component';
 
 describe('ProviderCardComponent', () => {
-  let component: ProviderCardComponent;
-  let fixture: ComponentFixture<ProviderCardComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProviderCardComponent ]
-    })
-    .compileComponents();
-  }));
+  //define the component to test
+  let component : ProviderCardComponent;
+  //define a spy wrapper for the component functions
+  let emitProviderIndexSpy : any;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProviderCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      providers: [ProviderCardComponent]
+    });
+    component = TestBed.get(ProviderCardComponent);
+    //assign value to the local spy wrappers
+    emitProviderIndexSpy = spyOn(component.emitProviderIndex, "emit").and.callThrough();
   });
 
-  /*it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
+
+  it('should call its event emitter when a card-button is clicked', () => {
+    component.handleCardInteraction(0);
+    expect(emitProviderIndexSpy).toHaveBeenCalled();
+  });
 });

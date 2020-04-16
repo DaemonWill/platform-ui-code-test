@@ -1,29 +1,27 @@
-# Description
+# provider-list-exercise
+Simple app allowing the user to manage data between two lists on a ui with data persisted between sessions.
 
-Hi, and welcome to the team! As you know, we provide tools for searching for doctors and hospitals (i.e. "providers"). A new feature has been requested by the client. Here is the business story:
+[![Build Status](https://travis-ci.com/DaemonWill/platform-ui-code-test.svg?branch=master)](https://travis-ci.com/DaemonWill/platform-ui-code-test)
 
-As a consumer, I want to see a list of providers each contained by a card. These providers can be pinned to a "saved list" to be easily referenced. The unselected provider data defined in the list component should be used in place of an API.
+Travis builds: https://travis-ci.com/DaemonWill/platform-ui-code-test
 
-Acceptance Criteria:
+## Objectives
+* Unselected providers can be clicked and sent to a selected list.
+* Selected providers can be removed by clicking an X on the provider's card.
+* When providers are removed from the selected list, they should go back to the unselected list.
+* The state of both lists should be retained when the app is reloaded.
+* Unit tests should be added to cover new functionality.
 
-- Unselected providers can be clicked and sent to a selected list.
-- Selected providers can be removed by clicking an X on the provider's card.
-- When providers are removed from the selected list, they should go back to the unselected list.
-- The state of both lists should be retained when the app is reloaded.
-- Unit tests should be added to cover new functionality.
+## Requirements
 
-# Installation
+* npm version ^5.2 (in order to run npx)
 
-- `npm install`
-- `ng serve`
-- Load the app at http://localhost:4200 
+## Setup
 
-# Testing
+You can load the project dependencies by running an `npm install` in the root folder
 
-To test your work, run:
+## Using the App
 
-- `ng test`
-
-# Finishing up
-
-- Please fork the repo and push your completed code to a public github repository.
+After running `npm install` in the ui directory, you can:
+* run tests using : `npm test`
+* start the server at port **4200** with `npm start`
